@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Procesador de XML del SAT</title>
+  <style>
+    /* Estilos para el encabezado de la página */
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin: 2rem;
+    }
+
+    /* Estilos para el input de carga de archivos */
+    input[type="file"] {
+      display: block;
+      margin: 1rem auto;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Estilos para las tablas */
+    table {
+      margin: 2rem auto;
+      border-collapse: collapse;
+      width: 80%;
+    }
+
+    table th,
+    table td {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #ccc;
+      font-size: 1.2rem;
+    }
+
+    table .encabezado {
+      background-color: #ccc;
+      font-size: 1.2rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Estilos para el div de resultados */
+    #resultado {
+      margin: 2rem auto;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  </style>
+  <script src="procesador.js"></script>
+</head>
+
+<body>
+  <h1>Procesador de XML del SAT</h1>
+  <p>
+    Seleccione un archivo XML del SAT para procesar:
+    <input type="file" id="archivoXML" onchange="cargarXML()" accept=".xml" />
+  </p>
+  <h2>Datos del archivo XML procesado</h2>
+  <table id="tablaDatos">
+    <thead>
+      <tr>
+        <th>XML</th>
+        <th>Fecha</th>
+        <th>Nombre del emisor</th>
+        <th>Folio</th>
+        <th>Subtotal</th>
+        <th>TOTAL</th>
+        <th>TIPO DE PAGO</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <h2>Sumas por tasa o cuota</h2>
+  <!--
+      <table id="tablaTotales">
+      <thead>
+        <tr>
+          <th>TasaOCuota</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  -->
+  <div id="resultado"></div>
+</body>
+
+</html>
